@@ -1,0 +1,9 @@
+<ion-view view-title="Cards">
+    <ion-content scroll="false">
+      <ion-slides options="options" slider="data.slider">
+        <ion-slide-page ng-repeat="card in cards" class="text-center">
+          <img ng-src="{{ card.card }}" />
+        </ion-slide-page>
+      </ion-slides>
+    </ion-content>
+</ion-view>
