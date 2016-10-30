@@ -1,0 +1,19 @@
+<ion-view view-title="Cards">
+    <ion-content>
+        <div class="row row-center responsive-sm"
+             ng-repeat="card in cards"
+             ng-if="$index % 3 == 0"
+             ng-switch="$index">
+            <div class="col col-33 col-offset-33 text-center" ng-switch-when="$last">
+                <a class="button button-block button-large" href="#/tab/cards/{{ $parent.$index }}">
+                    {{ card.value }} pt(s)
+                </a>
+            </div>
+            <div class="col col-33 text-center" ng-repeat="key in [0, 1, 2]" ng-switch-default>
+                <a class="button button-block button-large" href="#/tab/cards/{{ $parent.$index + key }}">
+                    {{ cards[$parent.$index + key].value }} pt(s)
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
